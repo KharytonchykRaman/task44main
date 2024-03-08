@@ -19,7 +19,10 @@ int main() {
 
 	user_init(array, size);
 
-	cout << "Minimum vector element: " << min_element(array, size);
+	cout << "\nMinimum vector element: " << min_element(array, size);
+	cout << "\nMaximum vector element: " << max_element(array, size);
+	cout << "\nArithmetic mean without min and max values of the vector: "
+		<< arithmetic_mean_without_min_max(array,size);
 
 	delete[] array;
 

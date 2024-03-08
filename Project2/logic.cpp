@@ -36,11 +36,19 @@ int min_element(int* array, int size) {
 }
 
 double arithmetic_mean_without_min_max(int* array, int size) {
-	int sum = 0;
+	double sum = 0;
+	int count = 0;
+	int min = min_element(array, size);
+	int max = max_element(array, size);
+
 	for (int i = 0; i < size; i++)
 	{
-		sum += array[i];
+		if (array[i] != min && array[i] != max)
+		{
+			count++;
+			sum += array[i];
+		}
 	}
 
-	return (sum - min_element(array, size) - max_element(array, size)) / size;
+	return sum == 0 ? sum : sum / count;
 }
